@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1100.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Telgram.Controller.Settings">
+    <stylesheets>
+        <URL value="@../Asset/style.css" />
+    </stylesheets>
+   <children>
+      <VBox alignment="BASELINE_CENTER" layoutX="675.0" layoutY="50.0" prefHeight="1000.0" prefWidth="450.0" spacing="70.0">
+         <children>
+            <JFXTextField fx:id="name_fld" focusColor="#52e9f1" labelFloat="true" onKeyPressed="#nameEntered" promptText="Name" unFocusColor="#fbff8c" />
+            <JFXTextField fx:id="username_fld" focusColor="#52e9f1" labelFloat="true" onKeyPressed="#usernameEntered" promptText="Username" unFocusColor="#fbff8c" />
+            <JFXTextField fx:id="bio_fld" focusColor="#52e9f1" labelFloat="true" onKeyPressed="#bioEntered" promptText="Bio" unFocusColor="#fbff8c" />
+            <JFXPasswordField fx:id="password_fld" focusColor="#52e9f1" labelFloat="true" onKeyPressed="#passwordEntered" promptText="Password" unFocusColor="#fbff8c" />
+            <JFXButton fx:id="signout" buttonType="RAISED" onAction="#signOut" text="Sign Out" />
+         </children>
+      </VBox>
+      <Label fx:id="note" layoutX="1279.0" layoutY="1034.0" text="*Press Enter on each Field to Submit" />
+      <ImageView layoutX="20.0" layoutY="20.0" onMouseClicked="#Back">
+         <image>
+            <Image url="@../Asset/Icon/back.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

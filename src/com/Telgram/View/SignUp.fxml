@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1100.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Telgram.Controller.SignUp">
+    <stylesheets>
+        <URL value="@../Asset/style.css" />
+    </stylesheets>
+   <children>
+      <VBox alignment="CENTER" layoutX="425.0" layoutY="50.0" prefHeight="1000.0" prefWidth="950.0" spacing="75.0">
+         <children>
+            <JFXTextField fx:id="name_fld" alignment="CENTER" focusColor="#ffc20e" labelFloat="true" promptText="Name" unFocusColor="#0099e5" />
+            <JFXTextField fx:id="username_fld" alignment="CENTER" focusColor="#ffc20e" labelFloat="true" promptText="Username" unFocusColor="#0099e5" />
+            <JFXPasswordField fx:id="password_fld" alignment="CENTER" focusColor="#ffc20e" labelFloat="true" promptText="Password" unFocusColor="#0099e5" />
+            <HBox alignment="CENTER" prefHeight="130.0" prefWidth="950.0" spacing="50.0">
+               <children>
+                  <ImageView onMouseClicked="#PickPicture">
+                     <image>
+                        <Image url="@../Asset/Icon/account.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label onMouseClicked="#PickPicture" prefHeight="84.0" prefWidth="229.0" text="Picture">
+                     <HBox.margin>
+                        <Insets right="200.0" />
+                     </HBox.margin>
+                  </Label>
+                  <CheckBox fx:id="gender" mnemonicParsing="false" prefHeight="73.0" prefWidth="243.0" text="Male" textFill="#ffc20e">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </CheckBox>
+               </children>
+            </HBox>
+            <JFXButton onAction="#signUp" text="Sign Up">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+      <ImageView layoutX="80.0" layoutY="80.0" onMouseClicked="#back">
+         <image>
+            <Image url="@../Asset/Icon/back.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="1141.0" layoutY="922.0" prefHeight="181.0" prefWidth="473.0" />
+   </children>
+</Pane>

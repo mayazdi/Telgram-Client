@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1100.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Telgram.Controller.Login">
+    <stylesheets>
+        <URL value="@../Asset/style.css" />
+    </stylesheets>
+    <children>
+        <JFXTextField fx:id="usr_fld" alignment="BOTTOM_LEFT" focusColor="#ffc20e" labelFloat="true" layoutX="625.0" layoutY="300.0" prefHeight="80.0" prefWidth="550.0" promptText="Username" unFocusColor="#0099e5" />
+        <JFXPasswordField fx:id="psd_fld" focusColor="#ffc20e" labelFloat="true" layoutX="625.0" layoutY="514.0" onKeyPressed="#keyPressed" prefHeight="80.0" prefWidth="550.0" promptText="Password" unFocusColor="#0099e5" />
+        <JFXButton alignment="CENTER" layoutX="740.0" layoutY="752.0" onAction="#signIn" prefWidth="320.0" text="Sign In">
+            <font>
+                <Font size="38.0" />
+            </font>
+        </JFXButton>
+        <Hyperlink alignment="CENTER" layoutX="304.0" layoutY="782.0" onAction="#goSignUp" prefWidth="400.0" text="No Account Yet?">
+            <font>
+                <Font size="38.0" />
+            </font>
+        </Hyperlink>
+      <StackPane fx:id="connection" prefHeight="60.0" prefWidth="300.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="300.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Asset/Icon/connection.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="con_lbl" text="Connection Failure" />
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+
+    </children>
+</Pane>
