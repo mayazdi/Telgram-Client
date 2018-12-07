@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1100.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Telgram.Controller.Settings">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Telgram.Controller.Settings">
     <stylesheets>
         <URL value="@../Asset/style.css" />
     </stylesheets>
    <children>
-      <VBox alignment="BASELINE_CENTER" layoutX="675.0" layoutY="50.0" prefHeight="1000.0" prefWidth="450.0" spacing="70.0">
+      <VBox alignment="BASELINE_CENTER" layoutX="300.0" spacing="50.0">
          <children>
             <JFXTextField fx:id="name_fld" focusColor="#52e9f1" labelFloat="true" onKeyPressed="#nameEntered" promptText="Name" unFocusColor="#fbff8c" />
             <JFXTextField fx:id="username_fld" focusColor="#52e9f1" labelFloat="true" onKeyPressed="#usernameEntered" promptText="Username" unFocusColor="#fbff8c" />
@@ -24,8 +24,8 @@
             <JFXButton fx:id="signout" buttonType="RAISED" onAction="#signOut" text="Sign Out" />
          </children>
       </VBox>
-      <Label fx:id="note" layoutX="1279.0" layoutY="1034.0" text="*Press Enter on each Field to Submit" />
-      <ImageView layoutX="20.0" layoutY="20.0" onMouseClicked="#Back">
+      <Label fx:id="note" layoutX="400.0" layoutY="514.0" text="*Press Enter on each Field to Submit" />
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#Back">
          <image>
             <Image url="@../Asset/Icon/back.png" />
          </image>

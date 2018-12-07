@@ -59,7 +59,7 @@ public class Tools {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/" + view + ".fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            Scene scene = new Scene(root1,1800,1100/* w, h*/);
+            Scene scene = new Scene(root1,900,550/* w, h*/);
             stage.setScene(scene);
             stage.setTitle(title);
             stage.getIcons().add(new Image(getClass().getResourceAsStream("../Asset/Icon/" + "telgram" /*icon*/ + ".png")));

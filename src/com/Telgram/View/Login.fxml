@@ -4,40 +4,63 @@
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1100.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Telgram.Controller.Login">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Telgram.Controller.Login">
     <stylesheets>
         <URL value="@../Asset/style.css" />
     </stylesheets>
     <children>
-        <JFXTextField fx:id="usr_fld" alignment="BOTTOM_LEFT" focusColor="#ffc20e" labelFloat="true" layoutX="625.0" layoutY="300.0" prefHeight="80.0" prefWidth="550.0" promptText="Username" unFocusColor="#0099e5" />
-        <JFXPasswordField fx:id="psd_fld" focusColor="#ffc20e" labelFloat="true" layoutX="625.0" layoutY="514.0" onKeyPressed="#keyPressed" prefHeight="80.0" prefWidth="550.0" promptText="Password" unFocusColor="#0099e5" />
-        <JFXButton alignment="CENTER" layoutX="740.0" layoutY="752.0" onAction="#signIn" prefWidth="320.0" text="Sign In">
-            <font>
-                <Font size="38.0" />
-            </font>
-        </JFXButton>
-        <Hyperlink alignment="CENTER" layoutX="304.0" layoutY="782.0" onAction="#goSignUp" prefWidth="400.0" text="No Account Yet?">
-            <font>
-                <Font size="38.0" />
-            </font>
-        </Hyperlink>
-      <StackPane fx:id="connection" prefHeight="60.0" prefWidth="300.0">
+      <GridPane layoutX="260.0" layoutY="70.0" prefHeight="430.0" prefWidth="380.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="300.0" spacing="20.0">
+              <JFXTextField fx:id="usr_fld" alignment="BOTTOM_LEFT" focusColor="#ffc20e" labelFloat="true" promptText="Username" unFocusColor="#0099e5" />
+              <JFXPasswordField fx:id="psd_fld" focusColor="#ffc20e" labelFloat="true" onKeyPressed="#keyPressed" promptText="Password" unFocusColor="#0099e5" GridPane.rowIndex="1" />
+              <JFXButton alignment="CENTER" onAction="#signIn" text="Sign In" GridPane.rowIndex="2">
+                  <font>
+                      <Font size="38.0" />
+                  </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+              </JFXButton>
+              <Hyperlink alignment="CENTER" onAction="#goSignUp" text="No Account Yet?" GridPane.rowIndex="3">
+                  <font>
+                      <Font size="26.0" />
+                  </font>
+              </Hyperlink>
+         </children>
+      </GridPane>
+      <StackPane fx:id="connection" prefHeight="40.0" prefWidth="210.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
                <children>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Asset/Icon/connection.png" />
                      </image>
+                     <HBox.margin>
+                        <Insets left="7.0" />
+                     </HBox.margin>
                   </ImageView>
                   <Label fx:id="con_lbl" text="Connection Failure" />
                </children>

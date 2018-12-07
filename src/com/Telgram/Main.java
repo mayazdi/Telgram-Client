@@ -14,7 +14,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("./View/Login.fxml"));
         primaryStage.setTitle("Telgram");
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("Asset/Icon/telgram.png")));
-        primaryStage.setScene(new Scene(root, 1800, 1100));
+        primaryStage.setScene(new Scene(root, 900, 550));
         primaryStage.setResizable(false);
         primaryStage.show();
     }

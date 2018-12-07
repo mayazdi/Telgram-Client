@@ -4,7 +4,7 @@
 }
 
 .label {
-    -fx-font-size: 70;
+    -fx-font-size: 30;
     -fx-text-fill: #eeeeee;
 
 }
@@ -67,7 +67,7 @@
 
 .jfx-button {
     -fx-font-family: 'sans-serif';
-    -fx-font-size: 70;
+    -fx-font-size: 30;
     -fx-text-fill: #000000;
     -fx-background-color: #464646;
 }
@@ -88,7 +88,7 @@
 
 .jfx-text-field
 {
-    -fx-font-size: 70;
+    -fx-font-size: 30;
     -jfx-focus-color: #0099E5;
 }
 
@@ -98,11 +98,11 @@
     -fx-text-fill: white;
 }
 .jfx-password-field {
-    -fx-font-size: 70;
+    -fx-font-size: 30;
     -jfx-focus-color: #0099E5;
 }
 .check-box{
-    -fx-font-size: 50;
+    -fx-font-size: 30;
 }
 
 .text-field .input-line
@@ -147,7 +147,7 @@
 }
 
 #con_lbl{
-    -fx-font-size: 25;
+    -fx-font-size: 18;
 }
 #connection{
     -fx-background-color: #5f5f5f;
