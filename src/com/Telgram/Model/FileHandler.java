@@ -14,9 +14,10 @@ public class FileHandler implements Runnable {
     }
     @Override
     public void run() {
-        try (Socket socket = new Socket("localhost", 8085);
+        try (Socket socket = new Socket("localhost", Tools.filePort);
              ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
              ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream())) {
+            //Send File and har chi ke hast
             /*outputStream.writeObject(this.file);
             System.out.println("Met here");*/
         } catch (Exception e) {

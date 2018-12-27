@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.CheckBox;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.util.Date;
@@ -22,10 +23,13 @@ public class SignUp {
     public JFXTextField username_fld;
     public JFXTextField name_fld;
     public CheckBox gender;
+    HashMap<String,File> pictureMap;
+    File profilePicture;
 
 
     public void signUp(ActionEvent actionEvent) throws Exception {
         HashMap<String, String> information = new HashMap<>();
+        pictureMap = new HashMap<>();
         information.put("From", username_fld.getText());
         information.put("To", "Server");
         information.put("Username", username_fld.getText());
@@ -37,7 +41,10 @@ public class SignUp {
         Thread signUp = new Thread(api);
         signUp.start();
         signUp.join();
-        System.out.println(api.inbox.value);
+        FileHandler fileHandler = new FileHandler(username_fld.getText(), profilePicture);
+        Thread fi = new Thread(fileHandler);
+        fi.start();
+        fi.join();
 
         if (api.inbox.value.containsKey("SignUp")) {
             if (api.inbox.value.get("SignUp").equals("Done")) {
@@ -58,10 +65,13 @@ public class SignUp {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Pick Profile Picture");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("jpeg", "*.jpeg"),
-                new FileChooser.ExtensionFilter("jpg", "*.jpg"),
-                new FileChooser.ExtensionFilter("png", "*.png")
+                new FileChooser.ExtensionFilter("Picture", "*.jpeg", "*.jpg", "*.png")
         );
+
+        File file = fileChooser.showOpenDialog((Stage)gender.getScene().getWindow());
+        if (file != null){
+            profilePicture = file ;
+        }
         /*File image = fileChooser.showOpenDialog(null);
         FileHandler fileHandler = new FileHandler(username_fld.getText(),image);
         ScheduledExecutorService backgroundrefresh = Executors.newSingleThreadScheduledExecutor();*/

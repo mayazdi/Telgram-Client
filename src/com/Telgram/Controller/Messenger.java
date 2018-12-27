@@ -3,31 +3,25 @@ package com.Telgram.Controller;
 
 import com.Telgram.Model.*;
 import com.jfoenix.controls.JFXTextField;
-import com.sun.xml.internal.fastinfoset.tools.FI_DOM_Or_XML_DOM_SAX_SAXEvent;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -193,7 +187,12 @@ public class Messenger {
     public void File(MouseEvent mouseEvent) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose your file:");
-        fileChooser.showOpenDialog((Stage)Contacts.getScene().getWindow());
+        File file = fileChooser.showOpenDialog((Stage)Contacts.getScene().getWindow());
+        if (file != null){
+            if (Tools.ServerIsOnline){
+
+            }
+        }
 
     }
 

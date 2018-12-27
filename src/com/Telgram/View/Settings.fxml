@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
@@ -22,7 +23,12 @@
             <JFXTextField fx:id="username_fld" focusColor="#52e9f1" labelFloat="true" onKeyPressed="#usernameEntered" promptText="Username" unFocusColor="#fbff8c" />
             <JFXTextField fx:id="bio_fld" focusColor="#52e9f1" labelFloat="true" onKeyPressed="#bioEntered" promptText="Bio" unFocusColor="#fbff8c" />
             <JFXPasswordField fx:id="password_fld" focusColor="#52e9f1" labelFloat="true" onKeyPressed="#passwordEntered" promptText="Password" unFocusColor="#fbff8c" />
-            <JFXButton fx:id="signout" buttonType="RAISED" onAction="#signOut" text="Sign Out" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <JFXButton fx:id="picture" buttonType="RAISED" onAction="#picture" text="Picture" />
+                  <JFXButton fx:id="signout" buttonType="RAISED" onAction="#signOut" text="Sign Out" />
+               </children>
+            </HBox>
          </children>
          <padding>
             <Insets top="10.0" />

@@ -9,8 +9,10 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.HashMap;
 
 
@@ -105,6 +107,15 @@ public class Settings {
             if (password_fld.getText().length() >= 3)
                 changeRequest("Password", password_fld.getText());
             else System.out.println("Not Long enough");
+        }
+    }
+
+    public void picture(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Choose your profile picture:");
+        File file = fileChooser.showOpenDialog((Stage)name_fld.getScene().getWindow());
+        if (file != null){
+
         }
     }
 }
