@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,7 +16,7 @@
         <URL value="@../Asset/style.css" />
     </stylesheets>
    <children>
-      <VBox alignment="BASELINE_CENTER" layoutX="300.0" spacing="50.0">
+      <VBox alignment="BASELINE_CENTER" layoutX="300.0" spacing="40.0">
          <children>
             <JFXTextField fx:id="name_fld" focusColor="#52e9f1" labelFloat="true" onKeyPressed="#nameEntered" promptText="Name" unFocusColor="#fbff8c" />
             <JFXTextField fx:id="username_fld" focusColor="#52e9f1" labelFloat="true" onKeyPressed="#usernameEntered" promptText="Username" unFocusColor="#fbff8c" />
@@ -23,8 +24,11 @@
             <JFXPasswordField fx:id="password_fld" focusColor="#52e9f1" labelFloat="true" onKeyPressed="#passwordEntered" promptText="Password" unFocusColor="#fbff8c" />
             <JFXButton fx:id="signout" buttonType="RAISED" onAction="#signOut" text="Sign Out" />
          </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
       </VBox>
-      <Label fx:id="note" layoutX="400.0" layoutY="514.0" text="*Press Enter on each Field to Submit" />
+      <Label fx:id="note" layoutX="470.0" layoutY="514.0" text="*Press Enter on each Field to Submit" />
       <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#Back">
          <image>
             <Image url="@../Asset/Icon/back.png" />

@@ -14,58 +14,67 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1100.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Telgram.Controller.Messenger">
+<AnchorPane prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Telgram.Controller.Messenger">
     <stylesheets>
         <URL value="@../Asset/style.css" />
     </stylesheets>
     <children>
-        <HBox prefHeight="1100.0" prefWidth="1800.0">
+        <HBox prefHeight="550.0" prefWidth="900.0">
             <children>
-                <VBox fx:id="left" prefHeight="1100.0" prefWidth="500.0">
+                <VBox fx:id="left" prefHeight="550.0" prefWidth="250.0">
                     <children>
-                        <HBox fx:id="search" prefHeight="150.0" prefWidth="500.0" styleClass="serachBox">
+                        <HBox fx:id="search" prefHeight="65.0" styleClass="serachBox">
                             <children>
-                                <ImageView fx:id="more" fitHeight="95.0" fitWidth="95.0" onMouseClicked="#More">
+                                <ImageView fx:id="more" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#More">
                                     <image>
                                         <Image url="@../Asset/Icon/menu.png" />
                                     </image>
                                 </ImageView>
-                                <JFXTextField fx:id="search_fld" onKeyPressed="#SearchSubmit" prefHeight="82.0" prefWidth="312.0" promptText="Search" styleClass="Search" />
-                                <ImageView fitHeight="95.0" fitWidth="95.0" onMouseClicked="#serachButton">
+                                <JFXTextField fx:id="search_fld" onKeyPressed="#SearchSubmit" prefHeight="40.0" prefWidth="160.0" promptText="Search" styleClass="Search" />
+                                <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#serachButton">
                                     <image>
                                         <Image url="@../Asset/Icon/search.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
-                        <ListView fx:id="Contacts" prefHeight="1050.0" prefWidth="500.0" styleClass="contactss" />
+                        <ListView fx:id="Contacts" prefHeight="485.0" prefWidth="250.0" styleClass="contactss" />
                     </children>
                 </VBox>
-                <VBox fx:id="right" prefHeight="1100.0" prefWidth="1300.0">
+                <VBox fx:id="right" prefHeight="550.0" prefWidth="650.0">
                     <children>
-                        <HBox fx:id="recipient" alignment="CENTER_LEFT" onMouseClicked="#goUserInfo" prefHeight="125.0" prefWidth="1300.0" spacing="10.0">
+                        <HBox fx:id="recipient" alignment="CENTER_LEFT" onMouseClicked="#goUserInfo" prefHeight="65.0" prefWidth="650.0" spacing="10.0">
                             <children>
-                                <ImageView fx:id="pro_pic" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../Asset/Icon/user.png" />
-                                    </image>
-                                    <HBox.margin>
-                                        <Insets left="10.0" />
-                                    </HBox.margin>
-                                </ImageView>
+                        <StackPane>
+                           <children>
+                                      <ImageView fx:id="pro_pic" fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@../Asset/Icon/user.png" />
+                                          </image>
+                                      </ImageView>
+                              <ImageView fitHeight="55.0" fitWidth="55.0">
+                                 <image>
+                                    <Image url="@../Asset/Icon/ImageStack.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </StackPane>
                                 <Label fx:id="contact" text="Pick a name to start chat with" />
                             </children>
                         </HBox>
-                        <ListView fx:id="chat" prefHeight="875.0" prefWidth="1300.0" />
-                        <HBox fx:id="transmitter" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1300.0" spacing="28.0">
+                        <ListView fx:id="chat" prefHeight="440.0" prefWidth="650.0" />
+                        <HBox fx:id="transmitter" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="650.0" spacing="14.0">
                             <children>
-                                <ImageView fitHeight="75.0" fitWidth="75.0" onMouseClicked="#File" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="37.0" fitWidth="37.0" onMouseClicked="#File" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../Asset/Icon/attach.png" />
                                     </image>
                                 </ImageView>
-                                <JFXTextField fx:id="message" focusColor="WHITE" maxWidth="1300.0" onKeyPressed="#keyPressed" prefHeight="80.0" prefWidth="1080.0" promptText="Message" unFocusColor="WHITE" />
-                                <ImageView fitHeight="75.0" fitWidth="75.0" onMouseClicked="#Send" pickOnBounds="true" preserveRatio="true">
+                                <JFXTextField fx:id="message" focusColor="WHITE" maxWidth="600.0" onKeyPressed="#keyPressed" prefWidth="540.0" promptText="Message" unFocusColor="WHITE" />
+                                <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#Send" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../Asset/Icon/send.png" />
                                     </image>
@@ -80,27 +89,50 @@
                 </VBox>
             </children>
         </HBox>
-        <StackPane fx:id="morepane" prefHeight="1100.0" prefWidth="500.0" styleClass="MorePane">
+      <StackPane fx:id="connection" layoutX="750.0" prefHeight="30.0" prefWidth="150.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Asset/Icon/connection.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="con_lbl" text="Connection Failure" />
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+        <StackPane fx:id="morepane" prefHeight="550.0" prefWidth="250.0" styleClass="MorePane">
             <children>
-                <VBox alignment="CENTER" prefHeight="348.0" prefWidth="240.0" spacing="20.0">
+                <VBox alignment="CENTER" spacing="5.0">
                     <children>
-                        <ImageView fitHeight="95.0" fitWidth="95.0" onMouseClicked="#Back" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="55.0" fitWidth="55.0" onMouseClicked="#Back" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../Asset/Icon/back.png" />
                             </image>
                             <VBox.margin>
-                                <Insets right="400.0" top="-15.0" />
+                                <Insets right="185.0" />
                             </VBox.margin>
                         </ImageView>
-                        <ImageView fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Asset/Icon/gender/boy.png" />
-                            </image>
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="150.0">
+                           <image>
+                              <Image url="@../Asset/Icon/ImageStack.png" />
+                           </image>
                         </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../Asset/Icon/gender/boy.png" />
+                                  </image>
+                              </ImageView>
+                     </children>
+                  </StackPane>
                         <Label fx:id="yourname" text="Your Name" />
                         <HBox alignment="CENTER_LEFT" onMouseClicked="#GoAddFriend" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                             <children>
-                                <ImageView fitHeight="73.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../Asset/Icon/account.png" />
                                     </image>
@@ -115,12 +147,12 @@
                                 </Label>
                             </children>
                             <VBox.margin>
-                                <Insets top="75.0" />
+                                <Insets top="30.0" />
                             </VBox.margin>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" onMouseClicked="#GoAddGroup" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                             <children>
-                                <ImageView fitHeight="87.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../Asset/Icon/group.png" />
                                     </image>
@@ -133,7 +165,7 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" onMouseClicked="#GoSettings" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                             <children>
-                                <ImageView fitHeight="78.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../Asset/Icon/settings.png" />
                                     </image>
@@ -146,7 +178,7 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" onMouseClicked="#Exit" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                             <children>
-                                <ImageView fitHeight="93.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../Asset/Icon/exit.png" />
                                     </image>
@@ -161,11 +193,11 @@
                 </VBox>
             </children>
         </StackPane>
-        <StackPane fx:id="infopane" layoutX="350.0" layoutY="150.0" prefHeight="800.0" prefWidth="1100.0" styleClass="UserInfo">
+        <StackPane fx:id="infopane" layoutX="175.0" layoutY="75.0" prefHeight="400.0" prefWidth="550.0" styleClass="UserInfo">
             <children>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox>
                <children>
-                  <ImageView fitHeight="96.0" fitWidth="96.0" onMouseClicked="#userBack">
+                  <ImageView fitHeight="60.0" fitWidth="60.0" onMouseClicked="#userBack">
                      <image>
                         <Image url="@../Asset/Icon/back.png" />
                      </image>
@@ -173,44 +205,45 @@
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>
                   </ImageView>
-                      <HBox alignment="CENTER" prefHeight="600.0" prefWidth="900.0">
+                      <HBox alignment="CENTER">
                           <children>
-                              <ImageView fx:id="infoimage" fitHeight="440.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Asset/Icon/user.png" />
-                           </image>
-                        </ImageView>
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0" spacing="30.0">
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                                    <ImageView fx:id="infoimage" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Asset/Icon/user.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="200.0" fitWidth="200.0">
+                                 <image>
+                                    <Image url="@../Asset/Icon/ImageStack.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                              <VBox alignment="CENTER" spacing="30.0">
                                   <children>
                                       <Label fx:id="infouser" text="Username" />
                                       <Label fx:id="infoname" text="Name" />
                               <Label fx:id="infobio" text="Bio" />
                                       <Hyperlink onAction="#infoAdd" prefHeight="71.0" prefWidth="306.0" text="Add To Contacts">
                                           <font>
-                                              <Font size="38.0" />
+                                              <Font size="30.0" />
                                           </font>
                                       </Hyperlink>
                                   </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                               </VBox>
                           </children>
                       </HBox>
                </children>
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
             </VBox>
             </children>
         </StackPane>
-      <StackPane fx:id="connection" layoutX="1500.0" prefHeight="60.0" prefWidth="300.0">
-         <children>
-            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0" spacing="10.0">
-               <children>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Asset/Icon/connection.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="con_lbl" text="Connection Failure" />
-               </children>
-            </HBox>
-         </children>
-      </StackPane>
     </children>
 </AnchorPane>
